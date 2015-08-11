@@ -1,0 +1,13 @@
+{
+  "name": "intel-examples-datastore",
+  "main": "app.js",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A redis-based back-end for the backing Redis datastore for Intel IoT Examples",
+  "devDependencies": {},
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "redis": "^0.12.1"
+  }
+}
