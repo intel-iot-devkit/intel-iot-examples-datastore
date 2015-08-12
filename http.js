@@ -45,6 +45,7 @@ function listen() {
 
 module.exports = {
   get: app.get.bind(app),
+  put: app.put.bind(app),
   post: app.post.bind(app),
   listen: listen
 };

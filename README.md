@@ -13,9 +13,21 @@ The following ENV vars control the app:
 
 ## Routes
 
-Two routes are made available, both with basic token auth:
-
-- **GET /:key** - gets the value of a key
-- **POST /:key** - sets a key to a value provided in POST body
+Two sets of routes are made available, both with basic token auth.
 
 To authorize, provide the AUTH_TOKEN in the `X-Auth-Token` HTTP header.
+
+#### Counter
+
+The counter routes are used to increment an increasing counter.
+
+- **GET /counter/:key** - gets the current value of a counter
+- **GET /counter/:key/inc** - increments a counter by 1
+
+#### Logger
+
+The logger routes wrap redis lists, and are used to keep a linear backlog of values.
+
+- **GET /logger/:key** - gets the latest value of a log
+- **PUT /logger/:key** - adds a value to a log (`value` param in POST body)
+- **GET /logger/:key/all** - returns all values of a log

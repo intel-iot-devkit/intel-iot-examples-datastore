@@ -3,20 +3,43 @@
 var redis = require("./redis"),
     http = require("./http");
 
-http.get("/:key", function(req, res, next) {
-  redis.get(req.params.key, function(err, value) {
+// get counter value
+http.get("/counter/:key", function(req, res, next) {
+  redis.hget("counters", req.params.key, function(err, value) {
+    if (err) { return next(err); }
+    res.json({ value: +value });
+  });
+});
+
+// increment/create a new counter
+http.get("/counter/:key/inc", function(req, res, next) {
+  redis.hincrby("counters", req.params.key, 1, function(err, value) {
     if (err) { return next(err); }
     res.json({ value: value });
   });
 });
 
-http.post("/:key", function(req, res, next) {
-  var key = req.params.key,
-      value = req.body.value;
-
-  redis.set(key, value, function(err, reply) {
+// get last value from log
+http.get("/logger/:key", function(req, res, next) {
+  redis.lindex(req.params.key, 0, function(err, value) {
     if (err) { return next(err); }
-    res.json({ reply: reply });
+    res.json({ value: value });
+  });
+});
+
+// append value to log
+http.put("/logger/:key", function(req, res, next) {
+  redis.lpush(req.params.key, req.body.value, function(err, length) {
+    if (err) { return next(err); }
+    res.json({ length: length });
+  });
+});
+
+// get all log values
+http.get("/logger/:key/all", function(req, res, next) {
+  redis.lrange(req.params.key, 0, -1, function(err, value) {
+    if (err) { return next(err); }
+    res.json({ value: value });
   });
 });
 
