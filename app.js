@@ -31,7 +31,7 @@ http.get("/logger/:key", function(req, res, next) {
 http.put("/logger/:key", function(req, res, next) {
   redis.lpush(req.params.key, req.body.value, function(err, length) {
     if (err) { return next(err); }
-    res.json({ length: length });
+    res.json({ value: req.body.value });
   });
 });
 
