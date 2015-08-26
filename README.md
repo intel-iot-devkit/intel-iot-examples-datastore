@@ -1,21 +1,56 @@
-# intel-examples
+# intel-iot-examples-datastore
 
-This is a simple Azure app to provide a Redis backend for the Intel examples.
+The Intel-IoT-Examples-Datastore is a small Redis-backed webserver, powered by [Express][].
 
-## Configuration
+[Express]: https://github.com/strongloop/express
 
-The following ENV vars control the app:
+### Setup
+
+To install the app's dependencies, use NPM:
+
+    $ npm install
+
+You'll also need to have Redis installed.
+For more info on that, see the [Redis download page](http://redis.io/download).
+
+### Configuration
+
+The primary configuration for the application takes the form of the following ENV vars:
 
 - **REDIS_URL** - the URL to use for Redis communication
 - **REDIS_AUTH** - authentication token for Redis backend
 - **PORT** - port to serve app on (defaults to `3000`)
 - **AUTH_TOKEN** - authentication token for clients to use
 
-## Routes
+### Deployment
 
-Two sets of routes are made available, both with basic token auth.
+This guide will cover setting up a deployment environment for the Datastore on Microsoft Azure.
 
-To authorize, provide the AUTH_TOKEN in the `X-Auth-Token` HTTP header.
+For other platforms, please refer to the platform documentation.
+
+Before we begin, please ensure you have an [Azure account](https://portal.azure.com/signin/index).
+
+As with the "Setup" section, our application's backing dependency is a running Redis instance.
+
+For more information on setting up a Redis Cache on Azure, please see [Microsoft's site](https://azure.microsoft.com/en-us/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/).
+
+In the Azure Portal, first create a new Web App:
+
+![Web App](images/create.png)
+
+Then, once it's created, access it's Settings page and provide "App Settings" key/value combinations, per the environment variables discussed above.
+
+You don't need to set `PORT`, as Azure will do that for you.
+
+You can also obtain the `REDIS_URL` and `REDIS_AUTH` settings from the Redis Cache you created earlier.
+
+![Settings](images/settings.png)
+
+### Routes
+
+The Express app exposes two sets of routes, both using basic token authentication.
+
+To authorize, provide the AUTH_TOKEN you set in the `X-Auth-Token` HTTP header.
 
 #### Counter
 
