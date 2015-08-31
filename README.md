@@ -1,6 +1,8 @@
 # intel-iot-examples-datastore
 
-The Intel-IoT-Examples-Datastore is a small Redis-backed webserver, powered by [Express][].
+The Intel-IoT-Examples-Datastore is a small Redis-backed webserver data storage app, powered by [Express][].
+
+It is intended to provide a simple data store for example appplications that are part of the Intel IoT Starter Kits examples. Although this data storage app was initially developed to deploy on Microsoft Azure, since it is based on commonly used open source modules, it should be easy to deploy on many different cloud hosts.
 
 [Express]: https://github.com/strongloop/express
 
