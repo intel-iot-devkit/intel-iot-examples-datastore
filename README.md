@@ -6,7 +6,28 @@ It is intended to provide a simple data store for example appplications that are
 
 [Express]: https://github.com/strongloop/express
 
-### Setup
+## How It Works
+
+The Express app exposes two sets of routes, both using basic token authentication.
+
+To authorize, provide the AUTH_TOKEN you set in the `X-Auth-Token` HTTP header.
+
+### Counter
+
+The counter routes are used to increment an increasing counter.
+
+- **GET /counter/:key** - gets the current value of a counter
+- **GET /counter/:key/inc** - increments a counter by 1
+
+### Logger
+
+The logger routes wrap redis lists, and are used to keep a linear backlog of values.
+
+- **GET /logger/:key** - gets the latest value of a log
+- **PUT /logger/:key** - adds a value to a log (`value` param in POST body)
+- **GET /logger/:key/all** - returns all values of a log
+
+## Local Setup
 
 To install the app's dependencies, use NPM:
 
@@ -15,7 +36,7 @@ To install the app's dependencies, use NPM:
 You'll also need to have Redis installed.
 For more info on that, see the [Redis download page](http://redis.io/download).
 
-### Configuration
+## Configuration
 
 The primary configuration for the application takes the form of the following ENV vars:
 
@@ -24,7 +45,7 @@ The primary configuration for the application takes the form of the following EN
 - **PORT** - port to serve app on (defaults to `3000`)
 - **AUTH_TOKEN** - authentication token for clients to use
 
-### Deployment
+## Deployment  - Microsoft Azure
 
 This guide will cover setting up a deployment environment for the Datastore on Microsoft Azure.
 
@@ -32,39 +53,79 @@ For other platforms, please refer to the platform documentation.
 
 Before we begin, please ensure you have an [Azure account](https://portal.azure.com/signin/index).
 
-As with the "Setup" section, our application's backing dependency is a running Redis instance.
+### Create New Web App
 
-For more information on setting up a Redis Cache on Azure, please see [Microsoft's site](https://azure.microsoft.com/en-us/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/).
+![Settings](images/new-web-app.png)
 
-In the Azure Portal, first create a new Web App:
+Click on "New", then choose "Web + Mobile", then click "Web App".
 
-![Web App](images/create.png)
+Enter the name for your new web application.
 
-Then, once it's created, access it's Settings page and provide "App Settings" key/value combinations, per the environment variables discussed above.
+Click on the "Save" button. Your new web application will be created.
 
-You don't need to set `PORT`, as Azure will do that for you.
+### Create New Redis Cache
 
-You can also obtain the `REDIS_URL` and `REDIS_AUTH` settings from the Redis Cache you created earlier.
+![Settings](images/new-redis-cache.png)
 
-![Settings](images/settings.png)
+Click on "New", then choose "Data + Storage", then click "Redis Cache".
 
-### Routes
+Enter the name for your new Redis cache.
 
-The Express app exposes two sets of routes, both using basic token authentication.
+Click on the "Save" button. Your new Redis cache will be created.
 
-To authorize, provide the AUTH_TOKEN you set in the `X-Auth-Token` HTTP header.
+### Determine Settings For Redis
 
-#### Counter
+![Settings](images/redis-access-ports.png)
 
-The counter routes are used to increment an increasing counter.
+Click on "Settings" then click on "Properties". Write down or copy the "Host Name" field so you can use that value for the `REDIS_URL` setting for the web application.
 
-- **GET /counter/:key** - gets the current value of a counter
-- **GET /counter/:key/inc** - increments a counter by 1
+Click on "Settings" then click on "Access Keys". Write down or copy the "Primary" or "Secondary" field so you can use that value for the `REDIS_AUTH` setting for the web application.
 
-#### Logger
+Click on "Settings" then click on "Access Ports". Click on the "Allow access only via SSL" to set it to "No". Click on the "Save" button.
 
-The logger routes wrap redis lists, and are used to keep a linear backlog of values.
+### Configure Web App
 
-- **GET /logger/:key** - gets the latest value of a log
-- **PUT /logger/:key** - adds a value to a log (`value` param in POST body)
-- **GET /logger/:key/all** - returns all values of a log
+![Settings](images/web-app-settings.png)
+
+Click on the "Web Apps" in the left sidebar, then click on the name of the new web application you created in the first step.
+
+Click on "Settings" then click on "Application Settings". Scroll down to the "App Settings" section.
+
+Enter `REDIS_URL` into the first blank "Key" field. Enter the value from "Host Name" from above in the the "Value" field.
+
+Enter `REDIS_AUTH` into the next blank "Key" field. Enter the value from "Primary" from above into the "Value" field.
+
+Enter `AUTH_TOKEN` into the next blank "Key" field. Enter whatever shared secret key that you want into the "Value" field.
+
+You don't need to set `PORT`, as Azure will do that automatically.
+
+Click on the "Save" button.
+
+### Deploy Web App
+
+![Settings](images/new-deploy-credentials.png)
+
+Click on "Settings" then click on "Continuous Deployment". Click on "Choose Source", then click on "Local Git Repository". Click on the "Save" button.
+
+Click on "Settings" then click on "Deployment Credentials". Enter a new "FTP/deployment user name" and "Password", then click on "Save".
+
+Click on "Settings" then click on "Properties". Scroll down to display the field "Git URL". Copy the contents of the field.
+
+Now, bring up the command line in the directory you use for this repo. Run the following Git command to add the Microsoft Azure server for deployment:
+
+    git remote add azure <GitURL>
+
+where `<gitURL>` is the value you obtained from on the "Properties" page. Now you are ready to deploy. Run the following Git command:
+
+    git push azure master
+
+You will be prompted for the password you entered under "Deployment Credentials".
+
+You should see output to the terminal, that ends like this:
+
+    remote: Finished successfully.
+    remote: Deployment successful.
+    To https://deadprogram@my-intel-iot.scm.azurewebsites.net:443/my-intel-iot.git
+      * [new branch]      master -> master
+
+This means that your application has been deployed to the Microsoft Azure cloud.
