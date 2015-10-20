@@ -1,16 +1,23 @@
 # Intel IoT Examples Datastore
 
-The Intel IoT Examples Datastore is a small Redis-backed webserver data storage app, powered by [Express][].
+The Intel IoT Examples Datastore is intended to provide a simple data store for example applications that are part of the Intel IoT Starter Kits examples.
 
-It is intended to provide a simple data store for example appplications that are part of the Intel IoT Starter Kits examples. Although this data storage app was initially developed to deploy on Microsoft Azure, since it is based on commonly used open source modules, it should be easy to deploy on many different cloud hosts.
+It is a Node.js application written using [Express][]. It uses a [Redis][] data store.
+
+Although this data storage app was initially developed to deploy on Microsoft Azure, since it is based on commonly used open source modules, it should be easy to deploy on many different cloud hosts.
 
 [Express]: https://github.com/strongloop/express
+[Redis]: http://redis.io/
 
 ## How It Works
 
-The Express app exposes two sets of routes, both using basic token authentication.
+The Intel IoT Examples Datastore application provides a simple REST API that allows authorized callers to store either log data, or incremental counter data.
+
+It exposes two sets of routes, both using basic token authentication.
 
 To authorize, provide the AUTH_TOKEN you set in the `X-Auth-Token` HTTP header.
+
+Multiple clients can share the same Intel IoT Examples Datastore, by simply using a different route "key" for each application.
 
 ### Counter
 
@@ -21,7 +28,7 @@ The counter routes are used to increment an increasing counter.
 
 ### Logger
 
-The logger routes wrap redis lists, and are used to keep a linear backlog of values.
+The logger routes wrap Redis lists, and are used to keep a linear backlog of values.
 
 - **GET /logger/:key** - gets the latest value of a log
 - **PUT /logger/:key** - adds a value to a log (`value` param in POST body)
@@ -75,11 +82,19 @@ Click on the "Create" button. Your new Redis cache will be created.
 
 ### Determine Settings For Redis
 
-![Settings](images/redis-access-ports.png)
+![Settings](images/redis-list.png)
+
+Click on the "Redis Caches" in the left sidebar, then click on the name of the new Redis cache you created in the previous step.
+
+![Settings](images/redis-properties.png)
 
 Click on "Settings" then click on "Properties". Write down or copy the "Host Name" field so you can use that value for the `REDIS_URL` setting for the web application.
 
+![Settings](images/redis-access-keys.png)
+
 Click on "Settings" then click on "Access Keys". Write down or copy the "Primary" or "Secondary" field so you can use that value for the `REDIS_AUTH` setting for the web application.
+
+![Settings](images/redis-access-ports.png)
 
 Click on "Settings" then click on "Access Ports". Click on the "Allow access only via SSL" to set it to "No". Click on the "Save" button.
 
@@ -97,13 +112,15 @@ Enter `REDIS_AUTH` into the next blank "Key" field. Enter the value from "Primar
 
 Enter `AUTH_TOKEN` into the next blank "Key" field. Enter whatever shared secret key that you want into the "Value" field.
 
-You don't need to set `PORT`, as Azure will do that automatically.
-
 Click on the "Save" button.
+
+Note that you don't need to set `PORT`, as the Microsoft Azure platform will do that automatically.
 
 ### Deploy Web App
 
 ![Settings](images/new-deploy-credentials.png)
+
+Click on the "Web Apps" in the left sidebar, then click on the name of the new web application you created in the first step.
 
 Click on "Settings" then click on "Continuous Deployment". Click on "Choose Source", then click on "Local Git Repository". Click on the "Save" button.
 
@@ -123,6 +140,7 @@ You will be prompted for the password you entered under "Deployment Credentials"
 
 You should see output to the terminal, that ends like this:
 
+    ...
     remote: Finished successfully.
     remote: Deployment successful.
     To https://deadprogram@my-intel-iot.scm.azurewebsites.net:443/my-intel-iot.git
