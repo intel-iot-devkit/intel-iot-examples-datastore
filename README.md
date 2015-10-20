@@ -100,7 +100,7 @@ Click on "Settings" then click on "Access Ports". Click on the "Allow access onl
 
 ### Configure Web App
 
-![Settings](images/web-settings.png)
+![Settings](images/web-list.png)
 
 Click on the "Web Apps" in the left sidebar, then click on the name of the new web application you created in the first step.
 
