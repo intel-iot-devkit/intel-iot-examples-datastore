@@ -1,6 +1,6 @@
 # Intel IoT Examples Datastore
 
-The Intel IoT Examples Datastore is intended to provide a simple data store for example applications that are part of the Intel IoT Starter Kits examples.
+The Intel IoT Examples Datastore is intended to provide a simple data store for example applications that are part of the *Grove and *Xadow kits examples.
 
 It is a Node.js application written using [Express][]. It uses a [Redis][] data store.
 
