@@ -9,7 +9,7 @@ Although this data storage application is initially developed to deploy on Micro
 [Express]: https://github.com/strongloop/express
 [Redis]: http://redis.io/
 
-## How It Works
+## How it works
 
 The Intel IoT Examples Datastore application provides a simple REST API that allows authorized callers to store either log data or incremental counter data.
 
