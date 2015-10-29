@@ -143,7 +143,7 @@ You should see output that ends like this:
     ...
     remote: Finished successfully.
     remote: Deployment successful.
-    To https://deadprogram@my-intel-iot.scm.azurewebsites.net:443/my-intel-iot.git
+    To https://user@my-intel-iot.scm.azurewebsites.net:443/my-intel-iot.git
       * [new branch]      master -> master
 
 This means your application has been deployed to the Microsoft* Azure* cloud.
