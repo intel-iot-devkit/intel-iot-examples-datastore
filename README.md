@@ -188,23 +188,23 @@ Click on the "Continue" button.
 
 Under "What do you want to name your new app?" enter a new name, then click on "FINISH".
 
-![Settings](images/bluemix/app-dashboard.png)
-
 After a few moments, your new web app will be created. Click on the "Back to Dashboard" link. You will see your new web app listed there.
 
 ### Create New Redis Cache
 
-![Settings](images/bluemix/app-overview.png)
+![Settings](images/bluemix/app-dashboard.png)
 
 Click on the new application you created in the previous series of steps.
 
-![Settings](images/bluemix/app-add-services.png)
+![Settings](images/bluemix/app-overview.png)
 
 Click on the "Add a service or API".
 
-![Settings](images/bluemix/add-redis-cloud.png)
+![Settings](images/bluemix/app-add-services.png)
 
 Click on "Redis Cloud" under "Data and Analytics" section.
+
+![Settings](images/bluemix/add-redis-cloud.png)
 
 Select a plan, then click on the "Create" button.
 
