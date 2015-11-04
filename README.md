@@ -62,7 +62,7 @@ Before we begin, please ensure you have an [Azure account](https://portal.azure.
 
 ### Create New Web App
 
-![Settings](images/new-web-app.png)
+![Settings](images/azure/new-web-app.png)
 
 Click on "New", then choose "Web + Mobile", then click "Web App".
 
@@ -72,7 +72,7 @@ Click on the "Create" button. Your new web application will be created.
 
 ### Create New Redis Cache
 
-![Settings](images/new-redis-cache.png)
+![Settings](images/azure/new-redis-cache.png)
 
 Click on "New", then choose "Data + Storage", then click "Redis Cache".
 
@@ -82,29 +82,29 @@ Click on the "Create" button. Your new Redis cache will be created.
 
 ### Determine Settings For Redis
 
-![Settings](images/redis-list.png)
+![Settings](images/azure/redis-list.png)
 
 Click on the "Redis Caches" in the left sidebar, then click on the name of the new Redis cache you created in the previous step.
 
-![Settings](images/redis-properties.png)
+![Settings](images/azure/redis-properties.png)
 
 Click on "Settings" then click on "Properties". Write down or copy the "Host Name" field so you can use that value for the `REDIS_URL` setting for the web application.
 
-![Settings](images/redis-access-keys.png)
+![Settings](images/azure/redis-access-keys.png)
 
 Click on "Settings" then click on "Access Keys". Write down or copy the "Primary" or "Secondary" field so you can use that value for the `REDIS_AUTH` setting for the web application.
 
-![Settings](images/redis-access-ports.png)
+![Settings](images/azure/redis-access-ports.png)
 
 Click on "Settings" then click on "Access Ports". Click on the "Allow access only via SSL" to set it to "No". Click on the "Save" button.
 
 ### Configure Web App
 
-![Settings](images/web-list.png)
+![Settings](images/azure/web-list.png)
 
 Click on the "Web Apps" in the left sidebar, then click on the name of the new web application you created in the first step.
 
-![Settings](images/web-app-settings.png)
+![Settings](images/azure/web-app-settings.png)
 
 Click on "Settings" then click on "Application Settings". Scroll down to the "App Settings" section.
 
@@ -120,7 +120,7 @@ Note that you don't need to set `PORT`, as the Microsoft Azure platform will do 
 
 ### Configure Deployment Credentials
 
-![Settings](images/new-deploy-credentials.png)
+![Settings](images/azure/new-deploy-credentials.png)
 
 Click on the "Web Apps" in the left sidebar, then click on the name of the new web application you created in the first step.
 
