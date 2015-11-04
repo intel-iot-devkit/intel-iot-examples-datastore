@@ -2,8 +2,9 @@
 
 /* eslint no-unused-vars: 0 */
 
-var PORT = process.env.PORT || 3000,
-    AUTH_TOKEN = process.env.AUTH_TOKEN || "DEFAULT_AUTH_TOKEN";
+var PORT = (process.env.VCAP_APP_PORT || process.env.PORT || 3000),
+    AUTH_TOKEN = (process.env.AUTH_TOKEN || "DEFAULT_AUTH_TOKEN"),
+    HOST = (process.env.VCAP_APP_HOST || process.env.HOST || "localhost");
 
 var app = require("express")();
 
@@ -38,8 +39,8 @@ function listen() {
   });
 
   // start
-  app.listen(PORT, function() {
-    console.log("http server listening on port", PORT);
+  app.listen(PORT, HOST, function() {
+    console.log("http server at", HOST, "listening on port", PORT);
   });
 }
 

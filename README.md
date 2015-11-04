@@ -4,7 +4,7 @@ The Intel IoT Examples Datastore is intended to provide a simple data store for 
 
 It is a Node.js application written using [Express][]. It uses a [Redis][] data store.
 
-Although this data storage app was initially developed to deploy on Microsoft Azure, since it is based on commonly used open source modules, it should be easy to deploy on many different cloud hosts.
+Although this data storage app was developed to deploy on either Microsoft Azure or IBM Bluemix, since it is based on commonly used open source modules, it should be easy to deploy on many different cloud hosts.
 
 [Express]: https://github.com/strongloop/express
 [Redis]: http://redis.io/
@@ -149,3 +149,47 @@ You should see output to the terminal, that ends like this:
       * [new branch]      master -> master
 
 This means that your application has been deployed to the Microsoft Azure cloud.
+
+## Deployment - IBM Bluemix
+
+This guide will cover setting up a deployment environment for the Datastore on IBM Bluemix.
+
+For other platforms, please refer to the platform documentation.
+
+Before we begin, please ensure you have an [IBM Bluemix account]().
+
+### Create New Web App
+
+Choose the "Space" to which you want to add the new web application, or create a new one.
+
+Click on "Create App"
+
+Under "What kind of app are you creating?" click on "WEB".
+
+Under "How do you want to get started?" click on "SDK for Node.js", then click on the "Continue" button.
+
+Under "What do you want to name your new app?" enter a new name, then click on "FINISH".
+
+After a few moments, your new web app will be created. Scroll down and click on the "View App Overview" button.
+
+### Create New Redis Cache
+
+Click on the "Add a service or API".
+
+Click on "Redis Cloud" under "Data and Analytics" section.
+
+Select a plan, then click on the "Create" button.
+
+You may be prompted to "Restage Application", if so click on the "Restage" button.
+
+### Configure Web App
+
+### Deploy Web App
+
+Click on the "Overview" link to return to the "Overview" page for the new web app.
+
+Click on the "Add Git" link located at the top right of the "Overview" page.
+
+The "Create Git Repository" dialog will be displayed. Make sure the checkbox for "Populate the repo with the starter app package and enable the Build and Deploy pipeline" is checked, then click on the "Continue" button.
+
+After a moment, the "Success!" message should be displayed.
