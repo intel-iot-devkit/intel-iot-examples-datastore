@@ -118,7 +118,7 @@ Click on the "Save" button.
 
 Note that you don't need to set `PORT`, as the Microsoft Azure platform will do that automatically.
 
-### Deploy Web App
+### Configure Deployment Credentials
 
 ![Settings](images/new-deploy-credentials.png)
 
@@ -130,11 +130,17 @@ Click on "Settings" then click on "Deployment Credentials". Enter a new "FTP/dep
 
 Click on "Settings" then click on "Properties". Scroll down to display the field "Git URL". Copy the contents of the field.
 
+### Configure Git
+
 Now, bring up the command line in the directory you use for this repo. Run the following Git command to add the Microsoft Azure server for deployment:
 
     git remote add azure <GitURL>
 
-where `<gitURL>` is the value you obtained from on the "Properties" page. Now you are ready to deploy. Run the following Git command:
+where `<gitURL>` is the value you obtained from on the "Properties" page. Now you are ready to deploy.
+
+### Deploy Web App
+
+Run the following Git command:
 
     git push azure master
 
@@ -184,12 +190,32 @@ You may be prompted to "Restage Application", if so click on the "Restage" butto
 
 ### Configure Web App
 
-### Deploy Web App
-
 Click on the "Overview" link to return to the "Overview" page for the new web app.
 
 Click on the "Add Git" link located at the top right of the "Overview" page.
 
 The "Create Git Repository" dialog will be displayed. Make sure the checkbox for "Populate the repo with the starter app package and enable the Build and Deploy pipeline" is checked, then click on the "Continue" button.
 
-After a moment, the "Success!" message should be displayed.
+After a moment, the "Success!" message should be displayed. Click on the "Close" button.
+
+The Git URL to the new Git repo will be displayed on the "Overview" page at the top right.
+
+### Configure Git
+
+Now, bring up the command line in the directory you use for this repo. Run the following Git command to add the IBM Bluemix server for deployment:
+
+    git remote add bluemix <GitURL>
+
+where `<gitURL>` is the value you displayed on the "Overview" page.
+
+Now you are ready to deploy.
+
+### Deploy Web App
+
+To deploy your web app, run the following Git command:
+
+    git push bluemix master -f
+
+You will be prompted for your Bluemix username and password.
+
+Once your git push is complete, your application has been deployed to the IBM Bluemix cloud. Please note that it may take a moment for your web app to restart.
