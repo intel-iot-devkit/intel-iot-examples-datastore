@@ -172,7 +172,7 @@ Choose the "Space" to which you want to add the new web application, or create a
 
 Click on "Create App"
 
-![Settings](images/bluemix/kinf-of-app.png)
+![Settings](images/bluemix/kind-of-app.png)
 
 Under "What kind of app are you creating?" click on "WEB".
 
