@@ -166,37 +166,67 @@ Before we begin, please ensure you have an [IBM Bluemix account]().
 
 ### Create New Web App
 
+![Settings](images/bluemix/start-dashboard.png)
+
 Choose the "Space" to which you want to add the new web application, or create a new one.
 
 Click on "Create App"
 
+![Settings](images/bluemix/kinf-of-app.png)
+
 Under "What kind of app are you creating?" click on "WEB".
 
-Under "How do you want to get started?" click on "SDK for Node.js", then click on the "Continue" button.
+![Settings](images/bluemix/how-get-started.png)
+
+Under "How do you want to get started?" click on "SDK for Node.js".
+
+![Settings](images/bluemix/how-get-started-continue.png)
+
+Click on the "Continue" button.
+
+![Settings](images/bluemix/name-for-app.png)
 
 Under "What do you want to name your new app?" enter a new name, then click on "FINISH".
 
-After a few moments, your new web app will be created. Scroll down and click on the "View App Overview" button.
+After a few moments, your new web app will be created. Click on the "Back to Dashboard" link. You will see your new web app listed there.
 
 ### Create New Redis Cache
 
+![Settings](images/bluemix/app-dashboard.png)
+
+Click on the new application you created in the previous series of steps.
+
+![Settings](images/bluemix/app-add-services.png)
+
 Click on the "Add a service or API".
+
+![Settings](images/bluemix/add-redis-cloud.png)
 
 Click on "Redis Cloud" under "Data and Analytics" section.
 
 Select a plan, then click on the "Create" button.
 
+![Settings](images/bluemix/restage-app.png)
+
 You may be prompted to "Restage Application", if so click on the "Restage" button.
 
 ### Configure Web App
+
+![Settings](images/bluemix/app-redis-dashboard.png)
 
 Click on the "Overview" link to return to the "Overview" page for the new web app.
 
 Click on the "Add Git" link located at the top right of the "Overview" page.
 
+![Settings](images/bluemix/create-git.png)
+
 The "Create Git Repository" dialog will be displayed. Make sure the checkbox for "Populate the repo with the starter app package and enable the Build and Deploy pipeline" is checked, then click on the "Continue" button.
 
+![Settings](images/bluemix/create-git-success.png)
+
 After a moment, the "Success!" message should be displayed. Click on the "Close" button.
+
+![Settings](images/bluemix/git-url-overview.png)
 
 The Git URL to the new Git repo will be displayed on the "Overview" page at the top right.
 
