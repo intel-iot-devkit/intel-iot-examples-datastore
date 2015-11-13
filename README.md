@@ -54,7 +54,7 @@ Primary configuration for the application takes the form of the following `ENV` 
 - `PORT` - port to serve the application on (defaults to `3000`)
 - `AUTH_TOKEN` - authentication token for clients to use
 
-## Deployment  - Microsoft* Azure*
+## Deployment - Microsoft* Azure*
 
 This guide covers setting up a deployment environment for the Intel® IoT Datastore on Microsoft* Azure*.
 
@@ -206,7 +206,21 @@ Select a plan, then click on the "Create" button.
 
 You may be prompted to "Restage Application", if so click on the "Restage" button.
 
+After that, click on the "Back to Dashboard" link at the top left.
+
 ### Configure Web App
+
+![Settings](images/bluemix/app-dashboard.png)
+
+Click on the new application you created in the previous series of steps.
+
+![Settings](images/bluemix/app-env-vars.png)
+
+Click on the "Environment Variables" link to display the "Environment Variables" page for the new web app, then cllick on the "User-Defined" tab at the top.
+
+Click on the "Add" button, and enter `AUTH_TOKEN` for the "Name" field, and whatever secret token you want to use for the "Value", then click on the "Save" button.
+
+### Add Git To Web App
 
 ![Settings](images/bluemix/app-redis-dashboard.png)
 
