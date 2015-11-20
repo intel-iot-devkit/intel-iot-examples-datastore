@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Intel® IoT Examples Datastore is intended to provide a simple data store for example applications that are part of the Intel IoT Starter Kits examples.
+The Intel® IoT Examples Datastore is intended to provide a simple data store for example applications that are part of the Intel® IoT Starter Kits examples.
 
 It is a Node.js* application written using [Express][]. It uses a [Redis][] data store.
 
@@ -13,7 +13,7 @@ Although this data storage app was developed to deploy on Microsoft* Azure* sinc
 
 ## How it works
 
-The Intel IoT Examples Datastore application provides a simple REST API that allows authorized callers to store either log data, or incremental counter data.
+The Intel® IoT Examples Datastore application provides a simple REST API that allows authorized callers to store either log data, or incremental counter data.
 
 It exposes two sets of routes, both using basic token authentication.
 
@@ -60,7 +60,9 @@ This guide covers setting up a deployment environment for the Intel® IoT Datast
 
 For other platforms, refer to the platform documentation.
 
-Before we begin, ensure you have a [Microsoft* Azure* account](https://portal.azure.com/signin/index).
+Before we begin, ensure you have a Microsoft* Azure* account:
+
+[https://portal.azure.com/signin/index](https://portal.azure.com/signin/index)
 
 ### Create a new web application
 
@@ -150,112 +152,97 @@ You should see output that ends like this:
 
 This means your application has been deployed to the Microsoft* Azure* cloud.
 
-## Deployment - IBM Bluemix
+## Deployment - IBM* Bluemix*
 
-This guide will cover setting up a deployment environment for the Datastore on IBM Bluemix.
+This guide covers setting up a deployment environment for the Intel® IoT Examples Datastore on IBM* Bluemix*.
 
-For other platforms, please refer to the platform documentation.
+For other platforms, refer to the platform documentation.
 
-Before we begin, please ensure you have an [IBM Bluemix account]().
+Before we begin, please ensure you have an IBM* Bluemix* account:
 
-### Create New Web App
+[https://console.ng.bluemix.net/home/auth/bluemix](https://console.ng.bluemix.net/home/auth/bluemix)
+
+### Create a new web application
 
 ![Settings](images/bluemix/start-dashboard.png)
 
-Choose the "Space" to which you want to add the new web application, or create a new one.
+Choose the **Space** where you want to add a new web application, or create a new one.
 
-Click on "Create App"
-
+1. Click **Create App**.<br>
 ![Settings](images/bluemix/kind-of-app.png)
 
-Under "What kind of app are you creating?" click on "WEB".
-
+2. Under **What kind of app are you creating?**, click **WEB**.<br>
 ![Settings](images/bluemix/how-get-started.png)
 
-Under "How do you want to get started?" click on "SDK for Node.js".
-
+3. Under **How do you want to get started?**, click **SDK for Node.js™**.<br>
 ![Settings](images/bluemix/how-get-started-continue.png)
 
-Click on the "Continue" button.
-
+4. Click **Continue**.<br>
 ![Settings](images/bluemix/name-for-app.png)
 
-Under "What do you want to name your new app?" enter a new name, then click on "FINISH".
+5. Under **What do you want to name your new app?**, type a new name.
+6. Click **FINISH**.
 
-After a few moments, your new web app will be created. Click on the "Back to Dashboard" link. You will see your new web app listed there.
+After a few moments, your new web app is created. Click the **Back to Dashboard** link. You can see your new web app listed there.
 
-### Create New Redis Cache
+### Create a new Redis* cache
 
 ![Settings](images/bluemix/app-dashboard.png)
 
-Click on the new application you created in the previous series of steps.
-
+1. Click the new application you created in the previous series of steps.<br>
 ![Settings](images/bluemix/app-overview.png)
 
-Click on the "Add a service or API".
-
+2. Click **Add a service or API**.<br>
 ![Settings](images/bluemix/app-add-services.png)
 
-Click on "Redis Cloud" under "Data and Analytics" section.
-
+3. Under **Data and Analytics**, click **Redis Cloud**.<br>
 ![Settings](images/bluemix/add-redis-cloud.png)
 
-Select a plan, then click on the "Create" button.
+4. Select a plan.
+5. Click **Create**.
 
 ![Settings](images/bluemix/restage-app.png)
 
-You may be prompted to "Restage Application", if so click on the "Restage" button.
+You may be prompted to restage your application. If so, click **Restage**.
 
-After that, click on the "Back to Dashboard" link at the top left.
-
-### Configure Web App
-
-![Settings](images/bluemix/app-dashboard.png)
-
-Click on the new application you created in the previous series of steps.
-
-![Settings](images/bluemix/app-env-vars.png)
-
-Click on the "Environment Variables" link to display the "Environment Variables" page for the new web app, then cllick on the "User-Defined" tab at the top.
-
-Click on the "Add" button, and enter `AUTH_TOKEN` for the "Name" field, and whatever secret token you want to use for the "Value", then click on the "Save" button.
-
-### Add Git To Web App
+### Configure the web application
 
 ![Settings](images/bluemix/app-redis-dashboard.png)
 
-Click on the "Overview" link to return to the "Overview" page for the new web app.
-
-Click on the "Add Git" link located at the top right of the "Overview" page.
+1. Click the **Overview** link to return to the **Overview** page for the new web app.
+2. Click the **Add Git** link at the top right of the **Overview** page.
 
 ![Settings](images/bluemix/create-git.png)
 
-The "Create Git Repository" dialog will be displayed. Make sure the checkbox for "Populate the repo with the starter app package and enable the Build and Deploy pipeline" is checked, then click on the "Continue" button.
+3. The **Create Git Repository** dialog box is displayed. Make sure the **Populate the repo with the starter app package and enable the Build and Deploy pipeline** check box is selected.
+4. Click **Continue**.
 
 ![Settings](images/bluemix/create-git-success.png)
 
-After a moment, the "Success!" message should be displayed. Click on the "Close" button.
+5. In the **Success!** message box, click **Close**.
 
 ![Settings](images/bluemix/git-url-overview.png)
 
-The Git URL to the new Git repo will be displayed on the "Overview" page at the top right.
+URL to the new Git* repository is displayed at the top right of the **Overview** page.
 
-### Configure Git
+### Configure Git*
 
-Now, bring up the command line in the directory you use for this repo. Run the following Git command to add the IBM Bluemix server for deployment:
+Bring up the command line in the directory you're using for this repository. Run the following Git* command to add the IBM* Bluemix* server for deployment:
 
     git remote add bluemix <GitURL>
 
-where `<gitURL>` is the value you displayed on the "Overview" page.
+where `<GitURL>` is the value displayed at the top right of the **Overview** page.
 
-Now you are ready to deploy.
+Now you are ready to deploy the application.
 
-### Deploy Web App
+### Deploy the web application
 
-To deploy your web app, run the following Git command:
+To deploy your web application, run the following Git* command:
 
     git push bluemix master -f
 
-You will be prompted for your Bluemix username and password.
+You are prompted for your IBM* Bluemix* username and password.
 
-Once your git push is complete, your application has been deployed to the IBM Bluemix cloud. Please note that it may take a moment for your web app to restart.
+Once the operation is complete, your application has been deployed to the IBM* Bluemix* cloud.
+
+Note: it may take a moment for your web application to restart.
