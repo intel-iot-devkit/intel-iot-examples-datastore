@@ -6,7 +6,7 @@ The Intel® IoT Examples Datastore is intended to provide a simple data store fo
 
 It is a Node.js* application written using [Express][]. It uses a [Redis][] data store.
 
-Although this data storage app was developed to deploy on Microsoft* Azure* since it is based on commonly used open-source modules, it should be easy to deploy on many different cloud hosts.
+Although this data storage app has been developed to deploy on Microsoft* Azure*, IBM* Bluemix*, or Amazon* Elastic Beanstalk*, since it is based on commonly used open-source modules, it should be easy to deploy on many different cloud hosts.
 
 [Express]: https://github.com/strongloop/express
 [Redis]: http://redis.io/
@@ -246,3 +246,53 @@ You are prompted for your IBM* Bluemix* username and password.
 Once the operation is complete, your application has been deployed to the IBM* Bluemix* cloud.
 
 Note: it may take a moment for your web application to restart.
+
+## Deployment - Amazon* Elastic Beanstalk*
+
+This guide covers setting up a deployment environment for the Intel® IoT Examples Datastore on Amazon* Web Services using Elastic Beanstalk*.
+
+For other platforms, refer to the platform documentation.
+
+Before we begin, please ensure you have an Amazon* Web Services account:
+
+[http://aws.amazon.com/](http://aws.amazon.com/)
+
+### Install Amazon* Elastic Beanstalk* CLI tools
+
+To deploy the Intel® IoT Examples Datastore on Amazon* Web Services using Elastic Beanstalk*, you must first install the EB CLI tools.
+
+[http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html)
+
+### Create a new web application
+
+Bring up the command line in the directory you're using for this repository. Run the following EB command to create a new Amazon* Web Services application:
+
+```
+eb init
+```
+
+When you are prompted for the Elastic Beanstalk region, type the number of the region you wish, or go ahead and choose the default.
+
+When you are prompted for the Elastic Beanstalk application to use, type the number corresponding to the option **Create new Application**.
+
+When prompted, type **y** if you want to set up Secure Shell (SSH) to connect to your instances. Type **n** if you do not want to set up SSH.
+
+### Deploy your web application
+
+Now, you can create your running environment, by typing the folloing command:
+
+```
+eb create
+```
+
+When you are prompted for the Elastic Beanstalk* environment name, type the name of the environment. If you want to accept the default, press **Enter**.
+
+When you are prompted to provide a CNAME prefix, type the CNAME prefix you want to use. If you want to accept the default, press **Enter**.
+
+### Configure your web application
+
+Most of the configuration settings are automatically determined by the Intel® IoT Examples Datastore application itself when running under Amazon* Elastic Beanstalk*. To set the `AUTH_TOKEN`, type the following command, substituting your desired token:
+
+```
+eb setenv AUTH_TOKEN=<your token>
+```

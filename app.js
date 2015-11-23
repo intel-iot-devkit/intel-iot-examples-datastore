@@ -1,6 +1,14 @@
 "use strict";
 
-var redis = require("./redis"),
+var PORT,
+    AUTH_TOKEN,
+    HOST,
+    REDIS_URL,
+    REDIS_OPTS,
+    REDIS_PORT;
+
+var settings = require("./settings"),
+    redis = require("./redis"),
     http = require("./http");
 
 // get counter value

@@ -2,12 +2,7 @@
 
 /* eslint no-unused-vars: 0 */
 
-var PORT = (process.env.VCAP_APP_PORT || process.env.PORT || 3000),
-    AUTH_TOKEN = (process.env.AUTH_TOKEN || "DEFAULT_AUTH_TOKEN"),
-    HOST = (process.env.VCAP_APP_HOST || process.env.HOST || "localhost");
-
 var app = require("express")();
-
 var bodyParser = require("body-parser");
 
 // parse POST bodies
