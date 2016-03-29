@@ -111,7 +111,7 @@ Note: you don't need to set `PORT`, as the Microsoft* Azure* platform does that 
 ### Deploy the web application
 
 1. In the left sidebar, select **App Services** and click the name of the new web application you previously created.<br>
-![Settings](images/azure/new-deploy-credentials.png)
+![Settings](images/azure/new-deploy-credentials-v2.png)
 2. Click **Settings**.
 3. Click **Deployment Source**.
 4. Click **Choose Source**.
