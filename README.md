@@ -110,35 +110,14 @@ Note: you don't need to set `PORT`, as the Microsoft* Azure* platform does that 
 
 ### Deploy the web application
 
-1. In the left sidebar, select **Web Apps** and click the name of the new web application you previously created.<br>
+1. In the left sidebar, select **App Services** and click the name of the new web application you previously created.<br>
 ![Settings](images/azure/new-deploy-credentials.png)
-2. Select **All settings > Continuous Deployment**.
-3. Select **Choose Source > Local Git Repository**.
-4. Click **Save**.
-5. Select **All settings > Deployment credentials**.
-6. Specify **FTP/deployment user name** and **Password**.
-7. Click **Save**.
-8. Select **All settings > Properties**.
-9. Scroll down to the **Git URL** field and copy its contents.
-10. In the directory you're using for this repository, use the command line to run the following Git* command that adds a Microsoft* Azure* server for deployment:
-
-        git remote add azure <GitURL>
-
-where `<gitURL>` is the value you obtained from the **Git URL** field on the **Properties** page.
-
-Now you are ready to deploy the application. Run the following Git* command:
-
-    git push azure master
-
-You are prompted for the password you entered under **Deployment credentials**.
-
-You should see output that ends like this:
-
-    ...
-    remote: Finished successfully.
-    remote: Deployment successful.
-    To https://username@my-intel-iot.scm.azurewebsites.net:443/my-intel-iot.git
-      * [new branch]      master -> master
+2. Click **Settings**.
+3. Click **Deployment Source**.
+4. Click **Choose Source**.
+5. Click **External Repository**.
+6. Click in the **Repository URL** field, and enter the following value: [https://github.com/intel-iot-devkit/intel-iot-examples-datastore](https://github.com/intel-iot-devkit/intel-iot-examples-datastore)
+7. Click **OK**.
 
 This means your application has been deployed to the Microsoft* Azure* cloud.
 
