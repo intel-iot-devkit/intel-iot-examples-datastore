@@ -134,39 +134,39 @@ Before we begin, please ensure you have an IBM* Bluemix* account:
 ### Create a new web application
 
 1. Choose the **Space** where you want to add a new web application, or create a new one.<br>
-![Settings](images/bluemix/2016/1-space.jpg)
-2. Click **Create Application**.
+![Settings](images/bluemix/2016/1-Space.jpg)
+2. Click **Create Application**.<br>
 ![Settings](images/bluemix/2016/2-Create-Application.jpg)
-3. Scroll down to Cloud Foundry Apps and choose **Node JS SDK**.
+3. Scroll down to Cloud Foundry Apps and choose **Node JS SDK**.<br>
 ![Settings](images/bluemix/2016/3-Choose-Node-JS-SDK.jpg)
-4. Fill in your app details.
+4. Fill in your app details.<br>
 ![Settings](images/bluemix/2016/4-App-Details.jpg)
 
 
-### C
+### Create new Compose for Redis connection
 
-1. You will be redirected to the **Getting Started** page and your app will start, once there, click on **Connections** and click on **Connect New**.
+1. You will be redirected to the **Getting Started** page and your app will start, once there, click on **Connections** and click on **Connect New**.<br>
 ![Settings](images/bluemix/2016/5-Connections.jpg)
 2. Search **Redis** in the filter bar at the top of the page and click on **Compose for Redis**.
 ![Settings](images/bluemix/2016/6-Searchfor-redis.jpg)
-3. Currently there is only one plan to choose from, head to the bottom of the page and click **Create**.
+3. Currently there is only one plan to choose from, head to the bottom of the page and click **Create**.<br>
 ![Settings](images/bluemix/2016/7-Choose-plan.jpg)
-4. When you are prompted to restage the application, click on the **Restage** button.
+4. When you are prompted to restage the application, click on the **Restage** button.<br>
 ![Settings](images/bluemix/2016/8-Restage.jpg)
-5. Once restaged click on the overview tab to take you back to the overview.
+5. Once restaged click on the overview tab to take you back to the overview.<br>
 ![Settings](images/bluemix/2016/9-overview.jpg)
 
 ### Configure the web application
 
-1. Scroll to the bottom of the page and click on the **Add GIT Repo and Pipeline** button. If you have not already added an alias to your IBM ID a new window opens up, add a new alias, accept the terms and click **Create**. This alias needs to be lowercase.
+1. Scroll to the bottom of the page and click on the **Add GIT Repo and Pipeline** button. If you have not already added an alias to your IBM ID a new window opens up, add a new alias, accept the terms and click **Create**. This alias needs to be lowercase.<br>
 ![Settings](images/bluemix/2016/10-Add-Alias.jpg)
-2. Once your alias has been created a confirmation page will show. Click **Continue**.
+2. Once your alias has been created a confirmation page will show. Click **Continue**.<br>
 ![Settings](images/bluemix/2016/11-Alias-Created.jpg)
-3. Click on the **Add GIT Repo and Pipeline** button again, ensure that **Populate the repo with the starter app package and enable the Build & Deploy pipeline** is checked and click **Continue**.
+3. Click on the **Add GIT Repo and Pipeline** button again, ensure that **Populate the repo with the starter app package and enable the Build & Deploy pipeline** is checked and click **Continue**.<br>
 ![Settings](images/bluemix/2016/12-Add-Repo.jpg)
-4. Once your GIT repo has been created you will be shown a success page, click **Close**.
+4. Once your GIT repo has been created you will be shown a success page, click **Close**.<br>
 ![Settings](images/bluemix/2016/13-git-success.jpg)
-5. Your new GIT url is shown in the bottom right of the page.
+5. Your new GIT url is shown in the bottom right of the page.<br>
 ![Settings](images/bluemix/2016/14-git-location.jpg)
 
 ### Configure Git*
