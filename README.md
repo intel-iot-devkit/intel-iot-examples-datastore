@@ -129,52 +129,45 @@ For other platforms, refer to the platform documentation.
 
 Before we begin, please ensure you have an IBM* Bluemix* account:
 
-[https://console.ng.bluemix.net/home/auth/bluemix](https://console.ng.bluemix.net/home/auth/bluemix)
+[https://console.ng.bluemix.net/](https://console.ng.bluemix.net/)
 
 ### Create a new web application
 
 1. Choose the **Space** where you want to add a new web application, or create a new one.<br>
-![Settings](images/bluemix/start-dashboard.png)
-2. Click **Create App**.
-3. Under **What kind of app are you creating?**, click **Web**.<br>
-![Settings](images/bluemix/kind-of-app.png)
-4. Under **How do you want to get started?**, click **SDK for Node.js™**.<br>
-![Settings](images/bluemix/how-get-started.png)
-5. Click **Continue**.<br>
-![Settings](images/bluemix/how-get-started-continue.png)
-6. Under **What do you want to name your new app?**, type a new name.<br>
-![Settings](images/bluemix/name-for-app.png)
-7. Click **Finish**.<br>
-After a few moments, your new web application is created. 
+![Settings](images/bluemix/2016/1-space.jpg)
+2. Click **Create Application**.
+![Settings](images/bluemix/2016/2-Create-Application.jpg)
+3. Scroll down to Cloud Foundry Apps and choose **Node JS SDK**.
+![Settings](images/bluemix/2016/3-Choose-Node-JS-SDK.jpg)
+4. Fill in your app details.
+![Settings](images/bluemix/2016/4-App-Details.jpg)
 
-Click the **Back to Dashboard** link. You can see your new web application listed there.
 
-### Create a new Redis* cache
+### C
 
-1. Under **Applications**, click the new application you created in the previous series of steps.<br>
-![Settings](images/bluemix/app-dashboard.png)
-2. You are taken to the application **Overview** page. Click **Add a service or API**.<br>
-![Settings](images/bluemix/app-overview.png)
-3. Under **Data and Analytics**, click **Redis Cloud**.<br>
-![Settings](images/bluemix/app-add-services.png)
-4. Select a plan.<br>
-![Settings](images/bluemix/add-redis-cloud.png)
-5. Click **Create**.
-6. You may be prompted to restage your application. If so, click **Restage**.<br>
-![Settings](images/bluemix/restage-app.png)
+1. You will be redirected to the **Getting Started** page and your app will start, once there, click on **Connections** and click on **Connect New**.
+![Settings](images/bluemix/2016/5-Connections.jpg)
+2. Search **Redis** in the filter bar at the top of the page and click on **Compose for Redis**.
+![Settings](images/bluemix/2016/6-Searchfor-redis.jpg)
+3. Currently there is only one plan to choose from, head to the bottom of the page and click **Create**.
+![Settings](images/bluemix/2016/7-Choose-plan.jpg)
+4. When you are prompted to restage the application, click on the **Restage** button.
+![Settings](images/bluemix/2016/8-Restage.jpg)
+5. Once restaged click on the overview tab to take you back to the overview.
+![Settings](images/bluemix/2016/9-overview.jpg)
 
 ### Configure the web application
 
-1. Click the **Overview** link to return to the **Overview** page for the new web application.<br>
-![Settings](images/bluemix/app-redis-dashboard.png)
-2. Click the **Add Git** link at the top right of the **Overview** page.<br>
-![Settings](images/bluemix/create-git.png)
-3. The **Create Git Repository** dialog box is displayed. Make sure the **Populate the repo with the starter app package and enable the Build & Deploy pipeline** check box is selected.
-4. Click **Continue**.<br>
-5. In the **Success!** message box, click **Close**.<br>
-![Settings](images/bluemix/create-git-success.png)
-6. URL to the new Git* repository is displayed at the top right of the **Overview** page.<br>
-![Settings](images/bluemix/git-url-overview.png)
+1. Scroll to the bottom of the page and click on the **Add GIT Repo and Pipeline** button. If you have not already added an alias to your IBM ID a new window opens up, add a new alias, accept the terms and click **Create**. This alias needs to be lowercase.
+![Settings](images/bluemix/2016/10-Add-Alias.jpg)
+2. Once your alias has been created a confirmation page will show. Click **Continue**.
+![Settings](images/bluemix/2016/11-Alias-Created.jpg)
+3. Click on the **Add GIT Repo and Pipeline** button again, ensure that **Populate the repo with the starter app package and enable the Build & Deploy pipeline** is checked and click **Continue**.
+![Settings](images/bluemix/2016/12-Add-Repo.jpg)
+4. Once your GIT repo has been created you will be shown a success page, click **Close**.
+![Settings](images/bluemix/2016/13-git-success.jpg)
+5. Your new GIT url is shown in the bottom right of the page.
+![Settings](images/bluemix/2016/14-git-location.jpg)
 
 ### Configure Git*
 
